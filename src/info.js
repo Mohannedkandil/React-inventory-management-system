@@ -3,26 +3,24 @@ import React from "react";
 class Info extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    this.state = {
+      count: 0,
+    };
   }
-  render() {
-    const title = this.props.title;
-    const showTitle = true;
-    if (showTitle) {
-      return (
-        <div>
-          <h1>{title}</h1>
-          <p>Manage your stuff</p>
-        </div>
-      );
-    } else {
-      return <p>Empty</p>;
-    }
-  }
-}
 
-Info.deafultProps = {
-  title: "Default",
+  buttonPressed() {
+
+  }
+
+  render () {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>;
+        <button onClick = {this.buttonPressed}>Click me</button>
+      </div>
+    );
+  }
+
 }
 
 export default Info;
