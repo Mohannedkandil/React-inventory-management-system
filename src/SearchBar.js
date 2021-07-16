@@ -1,5 +1,5 @@
 import {useState} from "react";
-
+import React, { Component }  from 'react';
 function SearchBar(props){
     const [name, setName] = useState(""); 
     const [price, setPrice] = useState(0); 
@@ -7,11 +7,11 @@ function SearchBar(props){
     const [type, setType] = useState(""); 
     
     const searchButtonPressed = () => {
-        props.callback({name: name, price:price, type:type, brand:brand});
+        props.updateSearchParams({name: name, price:price, type:type, brand:brand});
     }
     return(
         <div>
-            <h2>Search for an Item</h2>
+            <h2 className="red">Search for an Item</h2>
             <form>
                 <label htmlFor = "name-field">Name:</label>
                 <input id="name-field" type="text" val = {name} onChange={(e) => setName(e.target.value)}></input>
