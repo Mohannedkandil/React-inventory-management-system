@@ -15,19 +15,24 @@ function AddItem(props){
         setBrand("");
     };
     return(
-        <div>
-            <h2 className="blue">Add an Item</h2>
-            <form>
+        <div className="container">
+            <div className="row">
+                <h2>Add an Item</h2>
+            </div>
+            <div className="row">
                 <label htmlFor = "name-field">Name:</label>
-                <input id="name-field" type="text" val = {name} onChange={(e) => setName(e.target.value)}></input>
+                <input className = "form-control" id="name-field" type="text" val = {name} onChange={(e) => setName(e.target.value)}></input>
                 <label htmlFor = "price-field">Price:</label>
-                <input id="price-field" type="number" val = {price} onChange={(e) => setPrice(e.target.value)}></input>
+                <input className = "form-control" id="price-field" type="number" val = {price} onChange={(e) => setPrice(e.target.value)}></input>
                 <label htmlFor = "type-field">Type:</label>
-                <input id="type-field" type="text" val = {type} onChange={(e) => setType(e.target.value)}></input>
+                <input className = "form-control" id="type-field" type="text" val = {type} onChange={(e) => setType(e.target.value)}></input>
                 <label htmlFor = "brand-field">Brand:</label>
-                <input id="brand-field" type="text" val = {brand} onChange={(e) => setBrand(e.target.value)}></input>
-                <button type="button" onClick={addItemButtonPressed}>Add Item</button> 
-            </form>
+                <input className = "form-control" id="brand-field" type="text" val = {brand} onChange={(e) => setBrand(e.target.value)}></input>
+            </div>
+            <div className = "row mt-3">
+                <button className = "btn btn-primary" type="button" onClick={addItemButtonPressed}>Add Item</button> 
+            </div>    
+            
         </div>
     );
 }
